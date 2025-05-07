@@ -30,6 +30,12 @@ app.get("/registro", function (req, res) {
     `);
 });
 
+app.post("/registro", function (req, res) {
+    res.send(`Registro recebido com sucesso!<br>
+        Usuário ${req.body.nome} cadastrado com sucesso!`)
+}
+);
+
 // Inicializa o servidor HTTP na porta 3000
 app.listen(3000, function () {
   console.log("Servidor rodando na porta 3000");
