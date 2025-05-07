@@ -6,6 +6,10 @@ app.use((req, res, next) => {
     next();
 });
 
+app.use(express.urlencoded({ extended: true }));
+
+app.use(express.json());
+
 app.get("/", function (req, res) {
   res.send("Hello World");
 });
@@ -29,10 +33,6 @@ app.get("/registro", function (req, res) {
         </form>
     `);
 });
-
-app.use(express.urlencoded({ extended: true }));
-
-app.use(express.json());
 
 app.post("/registro", function (req, res) {
     res.send(`Registro recebido com sucesso!<br>
