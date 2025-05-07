@@ -30,6 +30,8 @@ app.get("/registro", function (req, res) {
     `);
 });
 
+app.use(express.urlencoded({ extended: true }));
+
 app.post("/registro", function (req, res) {
     res.send(`Registro recebido com sucesso!<br>
         Usuário ${req.body.nome} cadastrado com sucesso!`)
