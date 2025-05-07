@@ -19,6 +19,17 @@ app.get("/ola", function(req, res) {
     res.send(`Olá ${nome}`);
 });
 
+app.get("/registro", function (req, res) {
+    // monta um formulário HTML par receber os dados do usuário
+    res.send(`
+        <form method="POST" action="/registro">
+            <input type="text" name="nome" placeholder="Nome">
+            <input type="text" name="email" placeholder="Email">
+            <button type="submit">Enviar</button>
+        </form>
+    `);
+});
+
 // Inicializa o servidor HTTP na porta 3000
 app.listen(3000, function () {
   console.log("Servidor rodando na porta 3000");
