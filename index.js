@@ -1,10 +1,11 @@
-// Importa o módulo do Express Framework
 const express = require("express");
-
-// Inicializa um objeto de aplicação Express
 const app = express();
 
-// Cria um manipulador da rota padrão
+app.use((req, res, next) => {
+    console.log(new Date().toString(), req.host, req.method, req.url);
+    next();
+});
+
 app.get("/", function (req, res) {
   res.send("Hello World");
 });
