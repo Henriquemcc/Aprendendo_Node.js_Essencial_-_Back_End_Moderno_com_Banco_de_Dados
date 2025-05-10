@@ -1,4 +1,5 @@
 const produtosRepository = new Array();
+let produtoIdCounter = 0;
 
 function listar() {
   return produtosRepository;
@@ -9,6 +10,7 @@ function buscarPorId(id) {
 }
 
 function cadastrar(produto) {
+  produto.id = produtoIdCounter++;
   produtosRepository.push(produto);
   return produto;
 }
