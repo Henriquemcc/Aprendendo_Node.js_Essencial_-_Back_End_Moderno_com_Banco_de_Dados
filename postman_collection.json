@@ -55,7 +55,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 0,\n    \"nome\": \"Cafeteira\",\n    \"preco\": 1000,\n    \"detalhes\": \"Cafeteira de café expresso\"\n}",
+							"raw": "{\n    \"nome\": \"Cafeteira\",\n    \"preco\": 1000,\n    \"detalhes\": \"Cafeteira de café expresso\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -83,7 +83,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 0,\n    \"nome\": \"Cafeteira Philips\",\n    \"preco\": 1000,\n    \"detalhes\": \"Cafeteira de café expresso Philips Walita\"\n}",
+							"raw": "{\n    \"nome\": \"Cafeteira Philips\",\n    \"preco\": 2000,\n    \"detalhes\": \"Cafeteira de café expresso Philips Walita\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
