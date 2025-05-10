@@ -1,8 +1,8 @@
-const ProdutoDtoViewer = require('../models/ProdutoDtoViewer').ProdutoDtoViewer;
+const ProdutoDtoViewer = require('../dtos/ProdutoDtoViewer').ProdutoDtoViewer;
 
 function map(produto)
 {
-    return new Produto(
+    return new ProdutoDtoViewer(
         produto.id,
         produto.nome,
         produto.preco,
