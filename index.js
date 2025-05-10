@@ -1,4 +1,6 @@
 const express = require("express");
+const ProdutoRoute = require('./routes/ProdutoRoute');
+
 const app = express();
 
 app.use((req, res, next) => {
@@ -40,15 +42,7 @@ app.post("/registro", function (req, res) {
 }
 );
 
-const produtos = [
-    { id: 1, nome: 'Produto 1', preco: 10.00 },
-    { id: 2, nome: 'Produto 2', preco: 20.00 },
-    { id: 3, nome: 'Produto 3', preco: 30.00 }
-]
-
-app.get("/produtos", function(req, res) {
-    res.json(produtos);
-})
+app.use('/produtos', ProdutoRoute);
 
 // Inicializa o servidor HTTP na porta 3000
 app.listen(3000, function () {
