@@ -1,11 +1,11 @@
 const Produto = require('../models/Produto').Produto;
 
-function map(novoProdutoDto)
+function map(atualizarProdutoDto)
 {
     return new Produto(
-        0, novoProdutoDto.nome,
-        novoProdutoDto.preco,
-        novoProdutoDto.detalhes);
+        0, atualizarProdutoDto.nome,
+        atualizarProdutoDto.preco,
+        atualizarProdutoDto.detalhes);
 }
 
 module.exports = { map };
