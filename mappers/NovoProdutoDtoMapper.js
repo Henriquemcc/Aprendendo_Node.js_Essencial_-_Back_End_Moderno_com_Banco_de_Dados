@@ -7,3 +7,5 @@ function map(novoProdutoDto)
         novoProdutoDto.preco,
         novoProdutoDto.detalhes);
 }
+
+module.exports = { map };
