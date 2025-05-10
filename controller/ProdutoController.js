@@ -1,5 +1,7 @@
 const ProdutoService = require('../services/ProdutoService');
+const ProdutoDtoService = require('../services/ProdutoDtoService');
 const Produto = require('../models/Produto').Produto;
+const NovoProdutoDto = require('../dtos/NovoProdutoDto').NovoProdutoDto;
 
 async function listar(req, res) {
     const produtos = await ProdutoService.listar()
@@ -14,8 +16,8 @@ async function buscarPorId(req, res) {
 }
 
 async function cadastrar(req, res) {
-    const produto = new Produto(req.body.id, req.body.nome, req.body.preco, req.body.detalhes);
-    const produtoCadastrado = await ProdutoService.cadastrar(produto);
+    const novoProdutoDto = new NovoProdutoDto(req.body.nome, req.body.preco, req.body.detalhes);
+    const produtoCadastrado = await ProdutoDtoService.cadastrar(novoProdutoDto);
     res.status(201).json(produtoCadastrado);
 }
 
