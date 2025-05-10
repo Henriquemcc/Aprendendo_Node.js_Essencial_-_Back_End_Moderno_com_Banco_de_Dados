@@ -27,7 +27,7 @@ function atualizar(produto, id) {
 
 function deletar(id) {
   let indiceProdutoRemovido = this.produtosRepository.findIndex(
-    (produtoIterado, _, _) => produtoIterado.id == id
+    (produtoIterado) => produtoIterado.id == id
   );
   if (indiceProdutoRemovido > -1)
     this.produtosRepository.splice(indiceProdutoRemovido, 1);
