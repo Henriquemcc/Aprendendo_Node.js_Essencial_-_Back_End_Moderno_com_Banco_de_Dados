@@ -1,5 +1,3 @@
-const Produto = require("../models/Produto");
-
 const produtosRepository = new Array();
 
 function listar() {
