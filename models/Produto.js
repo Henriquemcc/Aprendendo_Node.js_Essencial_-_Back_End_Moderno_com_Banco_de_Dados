@@ -6,3 +6,5 @@ class Produto {
         this.detalhes = detalhes
     }
 }
+
+module.exports = {Produto}

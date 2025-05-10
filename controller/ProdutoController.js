@@ -1,5 +1,5 @@
 const ProdutoService = require('../services/ProdutoService');
-const Produto = require('../models/Produto');
+const Produto = require('../models/Produto').Produto;
 
 async function listar(req, res) {
     const produtos = await ProdutoService.listar()
