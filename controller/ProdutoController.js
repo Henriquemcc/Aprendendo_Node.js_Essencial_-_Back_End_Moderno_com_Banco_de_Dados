@@ -7,7 +7,7 @@ async function listar(req, res) {
 }
 
 async function buscarPorId(req, res) {
-    const produto = await ProdutoService.buscarPorId(req.param.id);
+    const produto = await ProdutoService.buscarPorId(req.params.id);
     if (!produto)
         return res.status(404).json({erros: 'Produto não encontrado'});
     res.json(produto);
