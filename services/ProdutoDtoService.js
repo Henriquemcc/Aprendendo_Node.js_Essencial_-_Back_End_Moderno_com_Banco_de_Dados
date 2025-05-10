@@ -1,5 +1,6 @@
 const ProdutoService = require('./ProdutoService');
 const NovoProdutoDtoMapper = require('../mappers/NovoProdutoDtoMapper');
+const AtualizarProdutoDtoMapper = require('../mappers/AtualizarProdutoDtoMapper');
 
 function listar() {
   return ProdutoService.listar();
@@ -14,8 +15,9 @@ function cadastrar(novoProdutoDto) {
   return ProdutoService.cadastrar(produto);
 }
 
-function atualizar(produto, id) {
-  return ProdutoService.atualizar(produto, id);
+function atualizar(atualizarProdutoDto, id) {
+  const produto = AtualizarProdutoDtoMapper.map(atualizarProdutoDto);
+  return ProdutoService.atualizar(atualizarProdutoDto, id);
 }
 
 function deletar(id) {
