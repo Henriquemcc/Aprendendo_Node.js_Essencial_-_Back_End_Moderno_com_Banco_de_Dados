@@ -32,34 +32,4 @@ routerAPI.get("/", function (req, res) {
   res.send("Hello World");
 });
 
-routerAPI.get("/henrique", function(req, res) {
-    res.send("Henrique Mendonça Castelar Campos");
-});
-
-routerAPI.get("/ola", function(req, res) {
-    let nome = req.query.nome;
-    res.send(`Olá ${nome}`);
-});
-
-routerAPI.get("/registro", function (req, res) {
-    // monta um formulário HTML par receber os dados do usuário
-    res.send(`
-        <form method="POST" action="/api/registro">
-            <input type="text" name="nome" placeholder="Nome">
-            <input type="text" name="email" placeholder="Email">
-            <button type="submit">Enviar</button>
-        </form>
-    `);
-});
-
-routerAPI.post("/registro", function (req, res) {
-    res.send(`Registro recebido com sucesso!<br>
-        Usuário ${req.body.nome} cadastrado com sucesso!`)
-}
-);
-
-routerAPI.use('/cafe', function(req, res) {
-    res.status(418).send("Sou um bule de chá");
-});
-
 routerAPI.use('/produtos', ProdutoRoute);
