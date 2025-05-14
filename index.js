@@ -45,6 +45,11 @@ app.post("/registro", function (req, res) {
 
 app.use('/produtos', ProdutoRoute);
 
+app.use(function(req, res) {
+    console.log("Rota não encontrada")
+    res.status(404).send("Rota não encontrada!");
+});
+
 // Inicializa o servidor HTTP na porta 3000
 app.listen(3000, function () {
   console.log("Servidor rodando na porta 3000");
