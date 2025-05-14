@@ -3,6 +3,9 @@ const ProdutoRoute = require('./routes/ProdutoRoute');
 
 const app = express();
 
+const knexConfig = require("knexfile");
+const knex = require("knex")(knexConfig.development);
+
 app.use((req, res, next) => {
     console.log(new Date().toString(), req.host, req.method, req.url);
     console.log("Headers:", req.headers);
