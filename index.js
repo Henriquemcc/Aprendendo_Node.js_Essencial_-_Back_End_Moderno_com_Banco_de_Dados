@@ -15,23 +15,23 @@ app.use(express.json());
 
 app.use(express.static('public'));
 
-app.get("/API/", function (req, res) {
+app.get("/", function (req, res) {
   res.send("Hello World");
 });
 
-app.get("/API/henrique", function(req, res) {
+app.get("/henrique", function(req, res) {
     res.send("Henrique Mendonça Castelar Campos");
 });
 
-app.get("/API/ola", function(req, res) {
+app.get("/ola", function(req, res) {
     let nome = req.query.nome;
     res.send(`Olá ${nome}`);
 });
 
-app.get("/API/registro", function (req, res) {
+app.get("/registro", function (req, res) {
     // monta um formulário HTML par receber os dados do usuário
     res.send(`
-        <form method="POST" action="/API/registro">
+        <form method="POST" action="/registro">
             <input type="text" name="nome" placeholder="Nome">
             <input type="text" name="email" placeholder="Email">
             <button type="submit">Enviar</button>
@@ -39,17 +39,17 @@ app.get("/API/registro", function (req, res) {
     `);
 });
 
-app.post("/API/registro", function (req, res) {
+app.post("/registro", function (req, res) {
     res.send(`Registro recebido com sucesso!<br>
         Usuário ${req.body.nome} cadastrado com sucesso!`)
 }
 );
 
-app.use('/API/cafe', function(req, res) {
+app.use('/cafe', function(req, res) {
     res.status(418).send("Sou um bule de chá");
 });
 
-app.use('/API/produtos', ProdutoRoute);
+app.use('/produtos', ProdutoRoute);
 
 app.use(function(req, res) {
     console.log("Rota não encontrada")
