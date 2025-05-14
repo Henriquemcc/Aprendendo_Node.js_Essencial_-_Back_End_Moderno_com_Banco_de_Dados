@@ -15,13 +15,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/produtos",
+							"raw": "http://localhost:3000/api/produtos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
 								"produtos"
 							]
 						}
@@ -34,13 +35,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/produtos/0",
+							"raw": "http://localhost:3000/api/produtos/0",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
 								"produtos",
 								"0"
 							]
@@ -63,13 +65,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/produtos",
+							"raw": "http://localhost:3000/api/produtos",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
 								"produtos"
 							]
 						}
@@ -91,13 +94,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/produtos/0",
+							"raw": "http://localhost:3000/api/produtos/0",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
 								"produtos",
 								"0"
 							]
@@ -120,13 +124,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/produtos/0",
+							"raw": "http://localhost:3000/api/produtos/0",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"api",
 								"produtos",
 								"0"
 							]
