@@ -14,7 +14,7 @@ app.use('/api', routerAPI);
 
 routerAPI.use(express.urlencoded({ extended: true }));
 routerAPI.use(express.json());
-routerAPI.use(express.static('public'));
+app.use(express.static('public'));
 
 routerAPI.get("/", function (req, res) {
   res.send("Hello World");
