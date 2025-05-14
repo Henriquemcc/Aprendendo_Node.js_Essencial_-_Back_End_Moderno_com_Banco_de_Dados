@@ -14,7 +14,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", function (req, res) {
-  res.send("Hello World");
+    res.setHeader('Content-Type', 'application/json')
+    res.send('{"message": "Hello World"}');
 });
 
 app.get("/henrique", function(req, res) {
