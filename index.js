@@ -7,8 +7,9 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
 
-app.get("/", function (req, res) {
+app.get("/", function (req, res, next) {
   res.send("Hello World");
+  next();
 });
 
 app.use((req, res, next) => {
