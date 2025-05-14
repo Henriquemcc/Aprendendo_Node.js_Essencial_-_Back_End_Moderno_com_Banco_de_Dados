@@ -12,10 +12,13 @@ async function listar(req, res) {
 }
 
 async function buscarPorId(req, res) {
-    const produto = await ProdutoService.buscarPorId(req.params.id);
-    if (!produto)
-        return res.status(404).json({erros: 'Produto não encontrado'});
-    res.json(produto);
+    knex.select("*").from("produtos").where({ id: req.params.id }).then((produtos) => {
+        if (produtos.length > 0) {
+            res.json(produtos[0]);
+        } else {
+            res.status(404).send("Produto não encontrado");
+        }
+    });
 }
 
 async function cadastrar(req, res) {
