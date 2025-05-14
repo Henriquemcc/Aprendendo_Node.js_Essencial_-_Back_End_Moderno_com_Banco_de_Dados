@@ -16,9 +16,14 @@ async function buscarPorId(req, res) {
 }
 
 async function cadastrar(req, res) {
-    const novoProdutoDto = new NovoProdutoDto(req.body.nome, req.body.preco, req.body.detalhes);
-    const produtoCadastrado = await ProdutoDtoService.cadastrar(novoProdutoDto);
-    res.status(201).json(produtoCadastrado);
+    try {
+        const novoProdutoDto = new NovoProdutoDto(req.body.nome, req.body.preco, req.body.detalhes);
+        const produtoCadastrado = await ProdutoDtoService.cadastrar(novoProdutoDto);
+        res.status(201).json(produtoCadastrado);
+    } catch (error) {
+        console.log("Erro ao adicionar produto");
+        res.status(500).send("Erro ao adicionar produto");
+    }
 }
 
 async function atualizar(req, res) {
