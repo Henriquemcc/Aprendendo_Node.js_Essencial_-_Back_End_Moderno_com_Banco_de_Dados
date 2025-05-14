@@ -2,10 +2,13 @@ const ProdutoService = require('../services/ProdutoService');
 const ProdutoDtoService = require('../services/ProdutoDtoService');
 const Produto = require('../models/Produto').Produto;
 const NovoProdutoDto = require('../dtos/NovoProdutoDto').NovoProdutoDto;
+const knexConfig = require("../knexfile");
+const knex = require("knex")(knexConfig.development);
 
 async function listar(req, res) {
-    const produtos = await ProdutoService.listar()
-    res.json(produtos);
+    knex.select("*").from("produtos").then((produtos) => {
+        res.json(produtos);
+    });
 }
 
 async function buscarPorId(req, res) {
