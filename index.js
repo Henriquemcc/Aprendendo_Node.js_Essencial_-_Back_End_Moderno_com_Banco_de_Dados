@@ -45,6 +45,10 @@ app.post("/registro", function (req, res) {
 }
 );
 
+app.use('/cafe', function(req, res) {
+    res.status(418).send("Sou um bule de chá");
+});
+
 app.use('/produtos', ProdutoRoute);
 
 app.use(function(req, res) {
