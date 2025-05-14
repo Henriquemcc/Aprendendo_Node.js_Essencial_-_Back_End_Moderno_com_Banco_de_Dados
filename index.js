@@ -9,29 +9,30 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use(express.urlencoded({ extended: true }));
+const routerAPI = express.Router();
+app.use('/api', routerAPI);
 
-app.use(express.json());
+routerAPI.use(express.urlencoded({ extended: true }));
+routerAPI.use(express.json());
+routerAPI.use(express.static('public'));
 
-app.use(express.static('public'));
-
-app.get("/", function (req, res) {
+routerAPI.get("/", function (req, res) {
   res.send("Hello World");
 });
 
-app.get("/henrique", function(req, res) {
+routerAPI.get("/henrique", function(req, res) {
     res.send("Henrique Mendonça Castelar Campos");
 });
 
-app.get("/ola", function(req, res) {
+routerAPI.get("/ola", function(req, res) {
     let nome = req.query.nome;
     res.send(`Olá ${nome}`);
 });
 
-app.get("/registro", function (req, res) {
+routerAPI.get("/registro", function (req, res) {
     // monta um formulário HTML par receber os dados do usuário
     res.send(`
-        <form method="POST" action="/registro">
+        <form method="POST" action="/api/registro">
             <input type="text" name="nome" placeholder="Nome">
             <input type="text" name="email" placeholder="Email">
             <button type="submit">Enviar</button>
@@ -39,17 +40,17 @@ app.get("/registro", function (req, res) {
     `);
 });
 
-app.post("/registro", function (req, res) {
+routerAPI.post("/registro", function (req, res) {
     res.send(`Registro recebido com sucesso!<br>
         Usuário ${req.body.nome} cadastrado com sucesso!`)
 }
 );
 
-app.use('/cafe', function(req, res) {
+routerAPI.use('/cafe', function(req, res) {
     res.status(418).send("Sou um bule de chá");
 });
 
-app.use('/produtos', ProdutoRoute);
+routerAPI.use('/produtos', ProdutoRoute);
 
 app.use(function(req, res) {
     console.log("Rota não encontrada")
